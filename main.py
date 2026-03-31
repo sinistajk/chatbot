@@ -15,7 +15,10 @@ openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://chatbot-puce-five-76.vercel.app"
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
