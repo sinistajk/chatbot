@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     async function loadMessages() {
-      const response = await fetch('http://127.0.0.1:8000/messages');
+      const response = await fetch('https://chatbot-production-6202.up.railway.app/messages');
       const data = await response.json();
       setMessages(data.messages);
     }
@@ -24,7 +24,7 @@ function App() {
     setInput('');
     setLoading(true);
 
-    const response = await fetch(`http://127.0.0.1:8000/chat?user_message=${encodeURIComponent(input)}`, {
+    const response = await fetch(`https://chatbot-production-6202.up.railway.app/chat?user_message=${encodeURIComponent(input)}`, {
       method: 'POST'
     });
     const data = await response.json();
